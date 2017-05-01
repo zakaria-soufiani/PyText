@@ -9,6 +9,7 @@ textPad = ScrolledText(root, width=100, height=100)
 
 ## add functionality
 
+## Open file command
 def open_command():
     file = tkFileDialog.askopenfile(parent=root, mode='rb', title='Select a file')
     if file != None:
@@ -16,6 +17,7 @@ def open_command():
         textPad.insert('1.0', contents)
         file.close()
 
+## save function
 def save_command(self):
     file = tkFileDialog.asksaveasfile(mode='w')
     if file != None:
@@ -23,10 +25,13 @@ def save_command(self):
         file.write(data)
         file.close()
 
+## exit function
 def exit_command():
     if tkMessageBox.askokcancel("Quit", "Do you really want to quit"):
         root.destroy()
 
+
+##info function, add info
 def about_command():
     label = tkMessageBox.showinfo("About", "Basic textpad")
 
